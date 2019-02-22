@@ -44,3 +44,39 @@ texture = ExtResource( 2 )
 visible = false
 texture = ExtResource( 3 )
 
+<<<<<<< HEAD
+=======
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -90.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 90.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/PauseButton"]
+scale = Vector2( 5, 5 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+editor/display_folded = true
+margin_right = 96.0
+margin_bottom = 57.0
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Label"]
+wait_time = 4096.0
+autostart = true
+
+[connection signal="pressed" from="CanvasLayer/PauseButton/TouchScreenButton" to="CanvasLayer/PauseButton" method="_on_PauseButton_pressed"]
+>>>>>>> upstream/master
