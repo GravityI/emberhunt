@@ -4,9 +4,7 @@
 
 [sub_resource type="SphereMesh" id=1]
 
-
 [sub_resource type="CircleShape2D" id=2]
-
 radius = 1.05374
 
 [node name="default_bullet" type="KinematicBody2D"]

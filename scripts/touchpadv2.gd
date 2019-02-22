@@ -20,6 +20,7 @@ func _ready():
 	origin = position
 
 func _input(event):
+	# Detect Touch and 
 	if event is InputEventScreenTouch:
 		if not event.pressed and is_pressed() and event.index == index:
 			$buttonSprite.global_position = origin
@@ -29,17 +30,17 @@ func _input(event):
 			
 	if event is InputEventScreenDrag:
 		if not disabled:
-			if event.position.x < OS.get_screen_size().x/2 - 150:
-				var localPos = event.position - origin
-				if is_pressed():
-					index = event.index
-					$buttonSprite.show()
-					$background.show()
-					$buttonSprite.global_position = event.position
-					touch_power = localPos.length()
-					touch_direction = localPos.normalized()
-					if touch_power > radius:
-						touch_power = radius
-						$buttonSprite.global_position = radius*touch_direction + origin
-					player_node.speed = touch_power
-					player_node.direction = touch_direction
+#			if event.position.x < get_viewport().size.x/2 + 200:
+			var localPos = event.position - origin
+			if is_pressed():
+				index = event.index
+				$buttonSprite.show()
+				$background.show()
+				$buttonSprite.global_position = event.position
+				touch_power = localPos.length()
+				touch_direction = localPos.normalized()
+				if touch_power > radius:
+					touch_power = radius
+					$buttonSprite.global_position = radius*touch_direction + origin
+				player_node.speed = touch_power
+				player_node.direction = touch_direction
